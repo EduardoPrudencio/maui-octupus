@@ -2,14 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Octupus.Controls"
-             x:Class="Octupus.MainPage">
+             x:Class="Octupus.LoginPage">
 
     <Grid ColumnDefinitions="*, 1, *">
         <VerticalStackLayout Grid.Column="0"
                              HorizontalOptions="Center"
                              VerticalOptions="Center"
                              >
-            <Label Text="Login" />
+            <Label Text="Octupus"
+                   FontAttributes="Bold"
+                   FontSize="43" 
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,5"
+                   />
+
+            <Line BackgroundColor="White" 
+                  Opacity=".3"
+                  />
+
+            <Label Text="Login" 
+                   Margin="0,30,0,5"
+                   />
             <HorizontalStackLayout Margin="0,0,0,20">
                 <Border BackgroundColor="{StaticResource Secondary}"
                         WidthRequest="45"
@@ -26,7 +39,9 @@
 
             </HorizontalStackLayout >
 
-            <Label Text="Password" />
+            <Label Text="Password" 
+                   Margin="0,0,0,5"
+                   />
 
             <HorizontalStackLayout>
                 <Border BackgroundColor="{StaticResource Secondary}"
