@@ -7,7 +7,7 @@
         <viewModel:LoginViewModel />
     </ContentPage.BindingContext>
 
-    <Grid ColumnDefinitions="*, 1, *">
+    <Grid ColumnDefinitions="{OnPlatform Default='*, 1, *', Android='*', iOS='*'}">
         <VerticalStackLayout Grid.Column="0"
                              HorizontalOptions="Center"
                              VerticalOptions="Center"
@@ -26,7 +26,7 @@
             <Label Text="Login" 
                    Margin="0,30,0,5"
                    />
-            <HorizontalStackLayout Margin="0,0,0,20">
+            <HorizontalStackLayout Margin="0,0,0,10">
                 <Border BackgroundColor="{StaticResource Secondary}"
                         WidthRequest="45"
                         HeightRequest="45"
@@ -67,20 +67,46 @@
 
             <Button Text="Login"
                     Command="{Binding LoginCimmand}"
-                    Margin="0,20,0,0"
+                    Margin="0,100,0,0"
                     />
 
         </VerticalStackLayout>
 
-        <Line BackgroundColor="White" 
-              Grid.Column="1" 
-              Margin="0,50,0,50"
-              />
+        <Line BackgroundColor="White"
+              Grid.Column="1"
+              Margin="0,50,0,50">
+            <Line.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean">
+                    <On Platform="WinUI"
+                        Value="True" />
+                    <On Platform="MacCatalys"
+                        Value="True" />
+                    <On Platform="iOS"
+                        Value="False" />
+                    <On Platform="Android"
+                        Value="False    " />
+
+                </OnPlatform>
+            </Line.IsVisible>
+        </Line>
 
         <VerticalStackLayout Grid.Column="2">
+            <VerticalStackLayout.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean">
+                    <On Platform="WinUI"
+                        Value="True" />
+                    <On Platform="MacCatalyst"
+                        Value="True" />
+                    <On Platform="iOS"
+                        Value="False" />
+                    <On Platform="Android"
+                        Value="False" />
+                </OnPlatform>
+            </VerticalStackLayout.IsVisible>
             <Image Source="powvo.png"
                    WidthRequest="320"
                    HeightRequest="600" 
+                   Opacity=".7"
                    VerticalOptions="Center"
                    />
         </VerticalStackLayout>
