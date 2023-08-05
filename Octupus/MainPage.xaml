@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Octupus.Controls"
+             x:Class="Octupus.MainPage">
+
+    <Grid ColumnDefinitions="*, 1, *">
+        <VerticalStackLayout Grid.Column="0"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             >
+            <Label Text="Login" />
+            <HorizontalStackLayout Margin="0,0,0,20">
+                <Border BackgroundColor="{StaticResource Secondary}"
+                        WidthRequest="45"
+                        HeightRequest="45"
+                        StrokeThickness="0">
+                    <Image Source="user_avatar.png"
+                           WidthRequest="20"
+                           HeightRequest="35"
+                           HorizontalOptions="Center" />
+                </Border>
+                <Entry WidthRequest="300"
+                       MaxLength="150"
+                       />
+
+            </HorizontalStackLayout >
+
+            <Label Text="Password" />
+
+            <HorizontalStackLayout>
+                <Border BackgroundColor="{StaticResource Secondary}"
+                        WidthRequest="45"
+                        HeightRequest="45"
+                        StrokeThickness="0">
+                    <Image Source="key.png" 
+                           WidthRequest="20"
+                           HeightRequest="35"
+                           HorizontalOptions="Center"/>
+                </Border>
+                <Entry WidthRequest="300"
+                       MaxLength="150" 
+                       IsPassword="True"
+                       />
+
+            </HorizontalStackLayout>
+
+            <Button Text="Login" Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+
+        <Line BackgroundColor="White" 
+              Grid.Column="1" 
+              Margin="0,50,0,50"
+              />
+
+        <VerticalStackLayout Grid.Column="2">
+            <Image Source="powvo.png"
+                   WidthRequest="320"
+                   HeightRequest="600" 
+                   VerticalOptions="Center"
+                   />
+        </VerticalStackLayout>
+
+
+    </Grid>
+</ContentPage>
